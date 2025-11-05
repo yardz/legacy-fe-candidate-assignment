@@ -1,0 +1,363 @@
+/* Home Container */
+.home-container {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Animated Background Elements */
+.home-background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.home-background::before,
+.home-background::after {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+	animation: float 20s ease-in-out infinite;
+}
+
+.home-background::before {
+	width: 500px;
+	height: 500px;
+	top: -250px;
+	right: -250px;
+	animation-delay: 0s;
+}
+
+.home-background::after {
+	width: 400px;
+	height: 400px;
+	bottom: -200px;
+	left: -200px;
+	animation-delay: -10s;
+}
+
+@keyframes float {
+	0%, 100% {
+		transform: translate(0, 0) scale(1);
+	}
+	33% {
+		transform: translate(30px, -50px) scale(1.1);
+	}
+	66% {
+		transform: translate(-20px, 20px) scale(0.9);
+	}
+}
+
+/* Home Content */
+.home-content {
+	position: relative;
+	z-index: 1;
+	max-width: 800px;
+	width: 100%;
+	text-align: center;
+	animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Hero Section */
+.home-hero {
+	margin-bottom: 3rem;
+}
+
+.home-icon {
+	font-size: 5rem;
+	margin-bottom: 1.5rem;
+	display: inline-block;
+	animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+}
+
+.home-title {
+	font-size: 3.5rem;
+	font-weight: 800;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin-bottom: 1rem;
+	line-height: 1.2;
+}
+
+.home-subtitle {
+	font-size: 1.5rem;
+	color: var(--text-secondary);
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+
+.home-description {
+	font-size: 1.125rem;
+	color: var(--text-light);
+	max-width: 600px;
+	margin: 0 auto 3rem;
+	line-height: 1.8;
+}
+
+/* Features Grid */
+.home-features {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+.home-feature-card {
+	background: white;
+	padding: 2rem;
+	border-radius: var(--border-radius-lg);
+	box-shadow: var(--shadow-md);
+	transition: all 0.3s ease;
+	animation: fadeIn 0.6s ease-out backwards;
+}
+
+.home-feature-card:nth-child(1) {
+	animation-delay: 0.1s;
+}
+
+.home-feature-card:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.home-feature-card:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+.home-feature-card:hover {
+	transform: translateY(-8px);
+	box-shadow: var(--shadow-lg);
+}
+
+.home-feature-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	display: block;
+}
+
+.home-feature-title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin-bottom: 0.75rem;
+}
+
+.home-feature-text {
+	font-size: 0.95rem;
+	color: var(--text-secondary);
+	line-height: 1.6;
+}
+
+/* CTA Buttons */
+.home-cta {
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	flex-wrap: wrap;
+	animation: fadeIn 0.8s ease-out 0.4s backwards;
+}
+
+.home-button {
+	padding: 1rem 2.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-decoration: none !important;
+	border-radius: var(--border-radius);
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	box-shadow: var(--shadow-md);
+	position: relative;
+	overflow: hidden;
+}
+
+.home-button:hover {
+	text-decoration: none !important;
+}
+
+.home-button::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+	transform: translate(-50%, -50%);
+	transition: width 0.6s, height 0.6s;
+}
+
+.home-button:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+.home-button span {
+	position: relative;
+	z-index: 1;
+}
+
+.home-button-primary {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.home-button-primary:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.home-button-secondary {
+	background: white;
+	color: var(--primary-color);
+	border: 2px solid var(--primary-color);
+}
+
+.home-button-secondary:hover {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	transform: translateY(-3px);
+	box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Security Badge */
+.home-security {
+	margin-top: 3rem;
+	padding: 1.5rem;
+	background: white;
+	border-radius: var(--border-radius-lg);
+	box-shadow: var(--shadow-sm);
+	display: inline-block;
+}
+
+.home-security-content {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.home-security-icon {
+	font-size: 2rem;
+}
+
+.home-security-text {
+	text-align: left;
+}
+
+.home-security-title {
+	font-size: 0.875rem;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin-bottom: 0.25rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.home-security-subtitle {
+	font-size: 0.875rem;
+	color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.home-container {
+		padding: 1rem;
+	}
+
+	.home-icon {
+		font-size: 4rem;
+	}
+
+	.home-title {
+		font-size: 2.5rem;
+	}
+
+	.home-subtitle {
+		font-size: 1.25rem;
+	}
+
+	.home-description {
+		font-size: 1rem;
+	}
+
+	.home-features {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.home-cta {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.home-button {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.home-security {
+		margin-top: 2rem;
+	}
+
+	.home-security-content {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.home-security-text {
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.home-title {
+		font-size: 2rem;
+	}
+
+	.home-subtitle {
+		font-size: 1.125rem;
+	}
+
+	.home-feature-card {
+		padding: 1.5rem;
+	}
+
+	.home-button {
+		padding: 0.875rem 2rem;
+		font-size: 1rem;
+	}
+}
+

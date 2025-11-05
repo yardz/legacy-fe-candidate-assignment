@@ -1,0 +1,347 @@
+/* Sign Message Form Container */
+.sign-message-container {
+	max-width: 700px;
+	margin: 2rem auto;
+	padding: 2rem;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border-radius: 20px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+	animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Form Wrapper */
+.sign-message-wrapper {
+	background: white;
+	padding: 2.5rem;
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.sign-message-header {
+	text-align: center;
+	margin-bottom: 2rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 2px solid #f0f0f0;
+}
+
+.sign-message-title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #2d3748;
+	margin-bottom: 0.5rem;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.sign-message-subtitle {
+	font-size: 0.95rem;
+	color: #718096;
+	line-height: 1.5;
+}
+
+/* Icon decoration */
+.sign-message-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	display: inline-block;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+/* Form Styles */
+.sign-message-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* Form Group */
+.sign-message-form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.sign-message-label {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: #4a5568;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.sign-message-label::before {
+	content: "✍️";
+	font-size: 1.2rem;
+}
+
+/* Textarea Styles */
+.sign-message-textarea {
+	width: 100%;
+	padding: 1rem;
+	font-size: 1rem;
+	line-height: 1.6;
+	border: 2px solid #e2e8f0;
+	border-radius: 12px;
+	background-color: #f7fafc;
+	color: #2d3748;
+	transition: all 0.3s ease;
+	outline: none;
+	resize: vertical;
+	min-height: 120px;
+	font-family: inherit;
+	box-sizing: border-box;
+}
+
+.sign-message-textarea:focus {
+	border-color: #667eea;
+	background-color: white;
+	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+	transform: translateY(-2px);
+}
+
+.sign-message-textarea::placeholder {
+	color: #a0aec0;
+}
+
+.sign-message-textarea.error {
+	border-color: #fc8181;
+	background-color: #fff5f5;
+}
+
+.sign-message-textarea.error:focus {
+	box-shadow: 0 0 0 3px rgba(252, 129, 129, 0.1);
+}
+
+/* Character Counter */
+.sign-message-counter {
+	font-size: 0.875rem;
+	color: #718096;
+	text-align: right;
+	margin-top: -0.5rem;
+}
+
+/* Error Message */
+.sign-message-error {
+	color: #e53e3e;
+	font-size: 0.875rem;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	animation: slideIn 0.3s ease;
+	background-color: #fff5f5;
+	padding: 0.75rem;
+	border-radius: 8px;
+	border-left: 4px solid #fc8181;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.sign-message-error::before {
+	content: "⚠️";
+	font-size: 1rem;
+}
+
+/* Button Styles */
+.sign-message-button {
+	padding: 1rem 2rem;
+	font-size: 1.05rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	outline: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+	position: relative;
+	overflow: hidden;
+}
+
+.sign-message-button::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+	transform: translate(-50%, -50%);
+	transition: width 0.6s, height 0.6s;
+}
+
+.sign-message-button:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+.sign-message-button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.sign-message-button:active {
+	transform: translateY(-1px);
+}
+
+.sign-message-button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+	transform: none !important;
+}
+
+.sign-message-button-content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+/* Info Box */
+.sign-message-info {
+	background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+	padding: 1rem 1.25rem;
+	border-radius: 12px;
+	border-left: 4px solid #667eea;
+	margin-top: 1rem;
+}
+
+.sign-message-info-text {
+	font-size: 0.875rem;
+	color: #4a5568;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.sign-message-info-text::before {
+	content: "💡 ";
+	margin-right: 0.25rem;
+}
+
+/* Security Badge */
+.sign-message-security {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 1.5rem;
+	padding: 0.75rem;
+	background-color: #f0fdf4;
+	border-radius: 8px;
+	border: 1px solid #bbf7d0;
+}
+
+.sign-message-security-icon {
+	color: #16a34a;
+	font-size: 1.25rem;
+}
+
+.sign-message-security-text {
+	font-size: 0.875rem;
+	color: #15803d;
+	font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.sign-message-container {
+		padding: 1rem;
+		margin: 1rem;
+	}
+
+	.sign-message-wrapper {
+		padding: 1.5rem;
+	}
+
+	.sign-message-title {
+		font-size: 1.5rem;
+	}
+
+	.sign-message-subtitle {
+		font-size: 0.875rem;
+	}
+
+	.sign-message-button {
+		padding: 0.875rem 1.5rem;
+		font-size: 1rem;
+	}
+}
+
+/* Loading State Animation */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.sign-message-button.loading::after {
+	content: "";
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-top-color: white;
+	border-radius: 50%;
+	animation: spin 0.6s linear infinite;
+}
+
+/* Success Animation */
+@keyframes successPulse {
+	0%, 100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 0.9;
+	}
+}
+
+.sign-message-form.success {
+	animation: successPulse 0.5s ease-in-out;
+}
+

@@ -1,0 +1,116 @@
+/* Toast Container Customization */
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  font-family: inherit;
+  padding: 1rem 1.25rem;
+  min-height: 64px;
+}
+
+.Toastify__toast--default {
+  background: white;
+  color: var(--text-primary);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: var(--success-color);
+  border-left: 4px solid var(--success-color);
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: var(--error-color);
+  border-left: 4px solid var(--error-color);
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  color: #856404;
+  border-left: 4px solid var(--warning-color);
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  color: #0c5460;
+  border-left: 4px solid var(--info-color);
+}
+
+.Toastify__toast-body {
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.Toastify__progress-bar {
+  height: 4px;
+}
+
+.Toastify__progress-bar--success {
+  background: var(--success-color);
+}
+
+.Toastify__progress-bar--error {
+  background: var(--error-color);
+}
+
+.Toastify__progress-bar--warning {
+  background: var(--warning-color);
+}
+
+.Toastify__progress-bar--info {
+  background: var(--info-color);
+}
+
+.Toastify__close-button {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Toast Icons */
+.Toastify__toast-icon {
+  width: 20px;
+  margin-right: 0.75rem;
+}
+
+/* Animations */
+@keyframes toastSlideIn {
+  from {
+    transform: translate3d(110%, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.Toastify__toast--top-right {
+  animation: toastSlideIn 0.3s ease-out;
+}
+
+/* Mobile Responsive */
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container {
+    width: calc(100vw - 2rem);
+    padding: 0;
+    left: 1rem;
+    margin: 0;
+    top: 1rem;
+  }
+  
+  .Toastify__toast {
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+  }
+}
+
